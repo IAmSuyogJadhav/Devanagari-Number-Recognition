@@ -13,6 +13,10 @@ np.random.seed(777)
 data = np.load('data_normalized.npy')
 labels_orig = np.load('labels.npy')
 m, n = data.shape
+mean = data.mean(axis=0)
+sigma = data.max(axis=0) - data.min(axis=0)
+data = (data - mean) / sigma
+
 
 # ------------------ Neural Network Parameters
 n_classes = 10

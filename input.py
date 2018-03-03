@@ -24,6 +24,5 @@ for i in range(10):
 mean = images.mean(axis=0)
 sigma = images.max(axis=0) - images.min(axis=0)
 images = (images - mean) / sigma
-
 np.save('data_normalized', images)
 np.save('labels', labels)
